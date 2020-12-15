@@ -1,0 +1,6 @@
+spring:
+  applicaiton:
+    name: cp
+  profiles:
+    active: prod
+

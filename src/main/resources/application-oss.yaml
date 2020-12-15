@@ -1,0 +1,10 @@
+oss:
+  accessKeyId: LTAI4G2jFsNGNNSci8SXu1mZ
+  accessKeySecret: x1xY838disUTmRTPJBPElx4Td05tDe
+  endpoint: oss-cn-beijing.aliyuncs.com
+  bucketName: home-ppz
+  maxSize: 10
+  callback:
+  expire: 600
+  dir: page/
+  prefix: https://www.ppzimg.top

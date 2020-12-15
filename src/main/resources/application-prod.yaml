@@ -1,0 +1,70 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    platform: test
+    username: ppz
+    password: Cbtwzpcp1
+    url: jdbc:mysql://rm-2ze5ft7u85hj12724xo.mysql.rds.aliyuncs.com/test?useUnicode=true&characterEncoding=utf8&autoReconnect=true&allowMultiQueries=true&useSSL=false&serverTimezone=Asia/Shanghai
+    type: com.alibaba.druid.pool.DruidDataSource
+
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 20MB
+
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
+
+  redis:
+    host: 182.92.164.133
+    port: 6379
+    password: Cbtwzpcp1
+    database : 1
+
+  rabbitmq:
+    host: 127.0.0.1
+    username: guest
+    port: 5672
+    password: guest
+    virtual-host: /
+
+  elasticsearch:
+    rest:
+      uris: 47.101.61.244:9200
+      username: elastic
+      password: yukicomic
+  dubbo:
+    application:
+      name: demo-consumer
+    registry:
+      address: nacos://182.92.164.133:8048
+nacos:
+  discovery:
+    server-addr : 182.92.164.133:8848
+    register:
+      service-name: example
+      ip: 192.168.8.21
+      port: 8082
+server:
+  port: 8082
+
+mybatis-plus:
+  type-aliases-package: cn.ppz111.my.entity
+  typeEnumsPackage: cn.ppz111.my.enums
+  mapper-locations: classpath:/mapper/*Mapper.xml
+  global-config:
+    db-config:
+      id-type: assign_id
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: false
+
+
+logging:
+  level:
+    com.petasiaonline.miniapp.mapper: debug
+  config: classpath:logback-spring.xml
+

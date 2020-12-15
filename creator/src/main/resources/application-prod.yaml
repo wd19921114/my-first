@@ -1,0 +1,54 @@
+spring:
+  application:
+    name: example
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    platform: test
+    username: ppz
+    password: Cbtwzpcp1
+    url: jdbc:mysql://rm-2ze5ft7u85hj12724xo.mysql.rds.aliyuncs.com/test?useUnicode=true&characterEncoding=utf8&autoReconnect=true&allowMultiQueries=true&useSSL=false&serverTimezone=Asia/Shanghai
+    type: com.alibaba.druid.pool.DruidDataSource
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 20MB
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
+
+  dubbo:
+    application:
+      name: demo-provider
+    base-package: cn.ppz111.creator
+    registry:
+      address: nacos://182.92.164.133:8848
+    protocol:
+      name: dubbo
+      serialization: hessian2
+      port: -1
+
+server:
+  port: 8085
+
+nacos:
+  config:
+    server-addr : 182.92.164.133:8848
+
+mybatis-plus:
+  type-aliases-package: cn.ppz111.creator.entity
+  typeEnumsPackage: cn.ppz111.creator.enums
+  mapper-locations: classpath:/mapper/*Mapper.xml
+  global-config:
+    db-config:
+      id-type: assign_id
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: false
+
+logging:
+  level:
+    com.petasiaonline.miniapp.mapper: debug
+  config: classpath:logback-spring.xml
+
